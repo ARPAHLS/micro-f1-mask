@@ -20,7 +20,7 @@ app = FastAPI(title="ARPA Micro Series: F1 Mask Bridge")
 
 # Configuration
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
-F1_MASK_MODEL = os.getenv("F1_MASK_MODEL", "micro-f1-mask")
+F1_MASK_MODEL = os.getenv("F1_MASK_MODEL", "arpacorp/micro-f1-mask")
 CLOUD_LLM_URL = os.getenv("CLOUD_LLM_URL", "https://api.openai.com/v1/chat/completions")
 CLOUD_API_KEY = os.getenv("CLOUD_API_KEY", "")
 

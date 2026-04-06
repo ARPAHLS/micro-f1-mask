@@ -5,7 +5,7 @@ import statistics
 import os
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
-MODEL_NAME = os.getenv("F1_MASK_MODEL", "micro-f1-mask")
+MODEL_NAME = os.getenv("F1_MASK_MODEL", "arpacorp/micro-f1-mask")
 
 def run_evaluation(num_samples=50):
     print(f"==================================================")

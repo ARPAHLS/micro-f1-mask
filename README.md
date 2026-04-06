@@ -174,9 +174,18 @@ The Redis Vault ensures that PII mappings remain consistent across a conversatio
 
 F1 Mask is designed for enterprise data protection and compliance. It should not be used as a substitute for comprehensive security audits or as a primary defense against targeted adversarial extraction.
 
+## Enterprise Solutions
+
+The public release of **ARPA F1 Mask** serves as a lightweight demonstration of how the *Function One (F1)* architecture can be fine-tuned for structured privacy enforcement. 
+
+For mission-critical infrastructure, ARPA offers an actively maintained, highly robust enterprise tier. Organizations can deploy our gated version out-of-the-box and completely offload the burden of continuous maintenance, bespoke fine-tuning, concept drift avoidance, and rigorous scenario evaluations. 
+
+For enterprise licensing or to discuss tailoring the F1 model to your proprietary data schemas, reach out to: **[input@arpacorp.net](mailto:input@arpacorp.net)**
+
 ## Contact
 
-- **Email**: security@arpacorp.net
+- **Commercial**: [input@arpacorp.net](mailto:input@arpacorp.net)
+- **Security**: security@arpacorp.net
 - **Issues**: [GitHub Issues](https://github.com/arpahls/micro-f1-mask/issues)
 - **Organization**: [ARPA Hellenic Logical Systems](https://arpacorp.net)
 

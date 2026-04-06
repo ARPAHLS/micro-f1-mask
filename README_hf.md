@@ -113,6 +113,14 @@ The model uses a deterministic tokenization scheme:
 - **Accuracy**: 76.10% (token-level generation).
 - **Latency**: Sub-50ms (inference on RTX 2070).
 
+## Enterprise Solutions
+
+The public release of **ARPA F1 Mask** serves as a lightweight demonstration of how the *Function One (F1)* architecture can be fine-tuned for structured privacy enforcement. 
+
+For mission-critical infrastructure, ARPA offers an actively maintained, highly robust enterprise tier. Organizations can deploy our gated version out-of-the-box and completely offload the burden of continuous maintenance, bespoke fine-tuning, concept drift avoidance, and rigorous scenario evaluations. 
+
+For enterprise licensing or to discuss tailoring the F1 model to your proprietary data schemas, reach out to: **[input@arpacorp.net](mailto:input@arpacorp.net)**
+
 ## Ethical Considerations
 
 **Data Provenance**: No real PII was used in the training of this model. All examples were synthetically generated to mimic enterprise communication patterns.

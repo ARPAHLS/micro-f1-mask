@@ -35,7 +35,7 @@ def run_evaluation(num_samples=50):
             "messages": [{"role": "user", "content": "Warmup prompt"}],
             "stream": False,
             "format": "json"
-        }, timeout=30.0)
+        }, timeout=120.0)
     except Exception as e:
         print(f"[ERROR] Could not connect to Ollama. Ensure the model is running: {e}")
         return

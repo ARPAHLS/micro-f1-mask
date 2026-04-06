@@ -28,10 +28,10 @@ model-index:
 
 **Zero-Latency PII Scrubbing - 270M Parameter Middleware**
 
-<img src="https://img.shields.io/badge/base-Gemma_3_270M-bae6fd?style=flat-square" alt="Base Model">
-<img src="https://img.shields.io/badge/task-PII_Scrubbing-efcefa?style=flat-square" alt="Task">
-<img src="https://img.shields.io/badge/training-PEFT_LoRA-bbf7d0?style=flat-square" alt="Training">
-<img src="https://img.shields.io/badge/license-Apache_2.0-fde68a?style=flat-square" alt="License">
+<a href="https://huggingface.co/google/gemma-3-270m-it"><img src="https://img.shields.io/badge/base-Gemma_3_270M-bae6fd?style=flat-square" alt="Base Model"></a>
+<a href="#binary-mapping--tokens"><img src="https://img.shields.io/badge/task-PII_Scrubbing-efcefa?style=flat-square" alt="Task"></a>
+<a href="#training-methodology"><img src="https://img.shields.io/badge/training-PEFT_LoRA-bbf7d0?style=flat-square" alt="Training"></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-Apache_2.0-fde68a?style=flat-square" alt="License"></a>
 
 </div>
 

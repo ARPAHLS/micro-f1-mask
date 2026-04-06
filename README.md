@@ -4,12 +4,12 @@
 
 **Zero-Latency PII Scrubbing Middleware for Enterprise Cloud Compliance**
 
-<img src="https://img.shields.io/badge/license-Apache_2.0-efcefa?style=flat-square" alt="License">
-<img src="https://img.shields.io/badge/series-ARPA_Micro-bae6fd?style=flat-square" alt="Series">
-<img src="https://img.shields.io/badge/task-PII_Scrubbing-bbf7d0?style=flat-square" alt="Task">
-<img src="https://img.shields.io/badge/inference-Ollama-fde68a?style=flat-square" alt="Inference">
-<img src="https://img.shields.io/badge/vault-Redis-fecaca?style=flat-square" alt="Vault">
-<img src="https://img.shields.io/badge/python-3.10+-bae6fd?style=flat-square" alt="Python">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache_2.0-efcefa?style=flat-square" alt="License"></a>
+<a href="https://arpacorp.net"><img src="https://img.shields.io/badge/series-ARPA_Micro-bae6fd?style=flat-square" alt="Series"></a>
+<a href="#pii-categories"><img src="https://img.shields.io/badge/task-PII_Scrubbing-bbf7d0?style=flat-square" alt="Task"></a>
+<a href="https://ollama.com/arpacorp/micro-f1-mask"><img src="https://img.shields.io/badge/inference-Ollama-fde68a?style=flat-square" alt="Inference"></a>
+<a href="https://redis.io/"><img src="https://img.shields.io/badge/vault-Redis-fecaca?style=flat-square" alt="Vault"></a>
+<a href="https://www.python.org/downloads/release/python-3100/"><img src="https://img.shields.io/badge/python-3.10+-bae6fd?style=flat-square" alt="Python"></a>
 
 <br><br>
 

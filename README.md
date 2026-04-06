@@ -133,6 +133,22 @@ Modify `synthetic_generator.py` to adjust:
 python synthetic_generator.py
 ```
 
+## Production Optimization Roadmap
+
+While this repository provides a fully functional 1,000-sample prototype, reaching 95%+ enterprise accuracy requires the following architectural optimizations:
+
+### 1. Hard-Negative Mining (Re-training)
+To push accuracy into the high 90s, the model must iteratively learn from its mistakes:
+1. **Scale**: Use the synthetic generator to produce 10,000 - 50,000 highly diverse samples tailored to your industry.
+2. **Evaluate**: Run `evaluation.py` continuously against samples of your real-world traffic.
+3. **Mine Edge Cases**: Every time the model misses a PII token (a "hard negative"), extract that sentence, generate 500 synthetic variations of that specific edge-case structure, and re-run the LoRA fine-tuning pipeline.
+
+### 2. Human-In-The-Loop (HITL) Workflows
+For mission-critical data, we recommend extending the FastAPI Bridge to include human oversight:
+
+- **Pre-Cloud Quarantine (Maximum Security):** Modify the endpoint so that when F1 Mask detects PII, the API payload pauses. The UI highlights the detected entities to the user (e.g., "We found [John Doe]. Click to approve."). The user manually verifies the masking *before* it is authorized to hit the cloud.
+- **Post-Reconstruction Review (Quality Control):** Allow the fully automated process to finish. Before the final reconstructed cloud response is saved to a database or emailed to a client, route it to an admin dashboard where a human can manually verify the reconstructed grammar.
+
 ## PII Categories
 
 F1 Mask detects and tokenizes 6 core entity categories:

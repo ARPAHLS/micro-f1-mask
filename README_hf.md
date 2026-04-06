@@ -113,6 +113,22 @@ The model uses a deterministic tokenization scheme:
 - **Accuracy**: 76.10% (token-level generation).
 - **Latency**: Sub-50ms (inference on RTX 2070).
 
+## Production Optimization Roadmap
+
+While this repository provides a fully functional 1,000-sample prototype, reaching 95%+ enterprise accuracy requires the following architectural optimizations:
+
+### 1. Hard-Negative Mining (Re-training)
+To push accuracy into the high 90s, the model must iteratively learn from its mistakes:
+1. **Scale**: Use the synthetic generator to produce 10,000 - 50,000 highly diverse samples tailored to your industry.
+2. **Evaluate**: Run an evaluation script to benchmark against samples of your real-world traffic.
+3. **Mine Edge Cases**: Every time the model misses a PII token (a "hard negative"), extract that sentence structure, generate 500 synthetic variations of that specific edge-case, and re-run the fine-tuning pipeline.
+
+### 2. Human-In-The-Loop (HITL) Workflows
+For mission-critical data, we recommend extending the middleware bridge to include human oversight:
+
+- **Pre-Cloud Quarantine (Maximum Security):** Modify the endpoint so that when F1 Mask detects PII, the API payload pauses. The application UI highlights the detected entities to the user. The user manually verifies the masking *before* the payload is authorized to hit the external cloud.
+- **Post-Reconstruction Review (Quality Control):** Allow the fully automated process to finish. Before the final reconstructed cloud response is saved or emailed, route it to an analyst dashboard where a human can manually verify the grammar of the reconstructed payload.
+
 ## Enterprise Solutions
 
 The public release of **ARPA F1 Mask** serves as a lightweight demonstration of how the *Function One (F1)* architecture can be fine-tuned for structured privacy enforcement. 

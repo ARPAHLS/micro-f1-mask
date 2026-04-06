@@ -1,0 +1,45 @@
+{
+    "name": "replace_pii",
+    "description": "Extracts PII entities from the text and logs them to be masked.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "entities": {
+                "type": "array",
+                "description": "List of PII entities identified inside the prompt.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "INDIVIDUAL",
+                                "FINANCIAL",
+                                "LOCATION",
+                                "CONTACT",
+                                "ACCESS",
+                                "CORP"
+                            ]
+                        },
+                        "val": {
+                            "type": "string",
+                            "description": "The exact raw string match from the user input."
+                        },
+                        "id": {
+                            "type": "string",
+                            "description": "The assigned local vault token (e.g. [EMAIL_1])."
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "val",
+                        "id"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "entities"
+        ]
+    }
+}

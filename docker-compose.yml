@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:alpine
+    container_name: arpa-f1-vault
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:

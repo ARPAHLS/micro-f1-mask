@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────
+# ARPA Micro Series: F1 Mask — Full Project Requirements
+# arpacorp.net | github.com/ARPAHLS | input@arpacorp.net
+#
+# NOTE: PyTorch with CUDA must be installed FIRST via:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+# Then install the rest with:
+#   pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────
+
+# ── Phase 2: Synthetic Data Generation ──────────────────────
+faker>=24.0.0
+google-genai>=0.8.0
+python-dotenv>=1.0.0
+
+# ── Phase 3: Training (PEFT LoRA + TRL SFTTrainer) ──────────
+# Standard HuggingFace stack — no Unsloth required.
+# Works natively on Windows with CUDA.
+datasets>=2.18.0
+transformers>=4.49.0
+trl>=0.12.0
+peft>=0.14.0
+accelerate>=0.29.0
+bitsandbytes>=0.43.0
+sentencepiece>=0.2.0
+safetensors>=0.4.3
+
+# ── Phase 5: Middleware Proxy & Redis Vault ──────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+redis>=5.0.3
+httpx>=0.27.0
+openai>=1.30.0
+
+# ── Shared Utilities ─────────────────────────────────────────
+pydantic>=2.7.0
+requests>=2.31.0
+python-multipart>=0.0.9

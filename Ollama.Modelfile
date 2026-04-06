@@ -1,0 +1,43 @@
+# ------------------------------------------------------------------
+# ARPA MICRO SERIES: F1 MASK — OLLAMA MODELFILE
+# ------------------------------------------------------------------
+# 
+# Usage:
+#   1. Local SafeTensors import:
+#      ollama create micro-f1-mask -f Ollama.Modelfile
+# 
+#   2. Local registration with quantization:
+#      ollama create micro-f1-mask --quantize q4_K_M -f Ollama.Modelfile
+# 
+#   3. Direct pull (if published):
+#      ollama pull arpacorp/micro-f1-mask
+# ------------------------------------------------------------------
+
+# Source: Merged SafeTensors directory
+FROM ./outputs/micro-f1-mask-merged
+
+# Performance and deterministic behavior parameters
+PARAMETER temperature 0.0
+PARAMETER stop "<end_of_turn>"
+PARAMETER stop "<end_function_call>"
+
+# Identity and role system prompt
+SYSTEM """You are Micro F1 Mask, a zero-latency PII scrubbing middleware developed by ARPA Hellenic Logical Systems.
+
+Your only task is to detect Personally Identifiable Information (PII) in the user's prompt and generate a 'replace_pii' function call. You must support the following categories:
+- INDIVIDUAL (Names, Usernames)
+- FINANCIAL (SSNs, Card numbers, IBANs)
+- LOCATION (Addresses, Zipcodes)
+- CONTACT (Emails, Phones)
+- ACCESS (Passwords, API Keys, JWTs)
+- CORP (Internal codenames, Project IDs)
+
+Output ONLY the function call. Do not provide explanations or chat with the user."""
+
+# Specialized prompt template for function-calling detection
+TEMPLATE """{{ if .System }}<start_of_turn>system
+{{ .System }}<end_of_turn>
+{{ end }}{{ if .Prompt }}<start_of_turn>user
+{{ .Prompt }}<end_of_turn>
+{{ end }}<start_of_turn>model
+"""

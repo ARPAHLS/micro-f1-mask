@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────
+# HuggingFace Upload Ignore
+# Only model weights, config, and tokenizer files are uploaded.
+# ─────────────────────────────────────────────────────────────
+
+# Source code (lives on GitHub, not HF)
+train_f1_mask.py
+convert_hf_to_gguf.py
+micro_f1_mask_bridge.py
+vault_manager.py
+synthetic_generator.py
+synthetic_pii_dataset.jsonl
+
+# Infrastructure (lives on GitHub)
+docker-compose.yml
+Ollama.Modelfile
+requirements.txt
+
+# Tests
+tests/
+
+# Environment & secrets
+.env
+.env.example
+.env.local
+
+# Git files
+.gitignore
+.git/
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+unsloth_compiled_cache/
+outputs/
+*.gguf
+*.log
+*.tmp
+tiny_garden.litertlm
